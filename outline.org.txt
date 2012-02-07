@@ -12,19 +12,44 @@ acedidas em qualquer computador, em qualquer lugar do mundo sem sair do browser!
 
 
 * TODO
+** SpellCheck
+** Melhorar parte CSS 3
 ** Implementar accelerator sensor logo
-** rever tudo
 ** treinar
-** separar em secções para ser mais fácil de assimilar
-
+** Meter mais texto, n tenho slides para 90 minutos
 
 * Slides
-** Resources
-*** http://www.html5rocks.com/en/tutorials/device/orientation/deviceorientationsample.html
-*** Tudo isto foi feito em HTML, com utilização de algumas destas funcionalidades
-*** Dive into html 5
-*** Html 5 Rocks
-** Estrutura Semântica
+** Intro
+*** DONE Quando podemos começar a utilizar HTML 5?
+**** Hoje
+- Todos os browsers modernos implementam as funcionalidades mais conhecidas de
+  HTML 5, podemos começar a utilizar estas capacidades a partir de hoje, tendo
+  sempre cuidado para suportar gradefull degradation
+**** Como?
+- Dado que HTML 5 é um conjunto de tecnologias, cada browser pode suportar um
+conjunto diferente das tecnologias que estão definidas no standard HTML 5.
+- Precisamos de detectar features em cada browser que acede à nossa aplicação
+- Felizmente já alguém fez isso por nós e só precisamos de utilizar o modernizer
+- You can't detect "HTML 5 support", detectar features que são necessárias para
+  a nossa aplicação
+- if (Modernizr.localstorage) {
+  // window.localStorage is available!
+} else {
+  // no native support for local storage :(
+  // maybe try Gears or another third-party solution
+}
+
+***** <!DOCTYPE html> Muito mais fácil que XHTML/whatever
+*** DONE O que é o HTML 5
+Não é uma linguagem nova que vêm substituir HTML/XHTML/etc etc
+
+É um conjunto de tecnologias e capacidades que estão disponíveis em browsers
+modernos e que nos permitem desenvolver aplicações web com capacidadades
+semelhantes a aplicações nativas.
+
+HTML5 ~= HTML + CSS + JS
+** Novos Elementos HTML
+*** DONE Estrutura Semântica
 - Antes do suporte para elemtos semânticos, as páginas web eram estruturadas com
   elementos genéricos, olhando para a source é díficil inferir alguma estrutura
   nas páginas. Isto tem alguns problemas:
@@ -41,7 +66,7 @@ acedidas em qualquer computador, em qualquer lugar do mundo sem sair do browser!
   - Utilizando a estrutura de páginas, os browsers podem definir defaults mais
     realistas e fazer um render default mininimamente interessante.
 
-*** Elementos Semânticos suportados
+**** Elementos Semânticos suportados
  <section> The section element represents a generic document or application
  section. A section, in this context, is a thematic grouping of content,
  typically with a heading. Examples of sections would be chapters, the tabbed
@@ -102,13 +127,7 @@ time-zone offset.
 
 <mark> The mark element represents a run of text in one document marked or
 highlighted for reference purposes.
-** DONE Other Goodies para aproximar aplicações web de aplicações nativas
-*** Markup for applications
-*** Notificações
-**** Aplicações web podem mostrar notificações, tal como aplicações nativas
-*** Drag & Drop
-*** Orientação de dispositivo
-** DONE Formulários
+*** DONE Formulários
 - O HTML 5 define vários tipos de inputs que todos os dispositivos podem
   utilizar de forma a proporcionar uma melhor experiência para o utilizador
 
@@ -136,7 +155,58 @@ highlighted for reference purposes.
     - Numbers (min, max, etc)
 
 Tudo isto degrada bem, podemos começar a utilizar isto!!
-** DONE Manipulação de história (pun algures aqui)
+*** DONE CSS 3
+Não faz parte do standard html5, mas todos os browser modernos implementam
+algumas funcionalidades de CSS 3
+
+- Exemplos
+  + CSS Selectors
+  + No more ugly fonts (!!)
+  + Text Wrapping
+  + Columns
+  + Etc etc etc
+*** DONE Video
+HTML5 defines a standard way to embed video in a web page, using a <video>
+element. Support for the <video> element is still evolving, which is a polite
+way of saying it doesn’t work yet. At least, it doesn’t work everywhere. But
+don’t despair! There are alternatives and fallbacks and options galore.
+
+- Mais uma razão para deixarmos de utilizar flash
+- Exemplo de como introduzir um video numa página
+** APIs JavaScript
+*** DONE Web Sockets
+Normalmente precisamos de long polling para manter uma conexão com o servidor
+
+Por exemplo, um utilizador pode ser avisado que houver alterações ao documento
+que ele está a editar ou recebemos notificações de novos eventos no spreadd
+
+Web sockets permite-nos manter uma conexão TCP normal com o servidor ou outros
+clientes!
+
+Só são enviados dados, não são enviados headers http
+
+- Exemplo MESMO DE WEBSOCKETS OMFG!
+*** DONE Localização
+Geolocation is the art of figuring out where you are in the world and
+(optionally) sharing that information with people you trust. There is more than
+one way to figure out where you are — your IP address, your wireless network
+connection, which cell tower your phone is talking to, or dedicated GPS hardware
+that calculates latitude and longitude from information sent by satellites in
+the sky.
+
+- Permite-nos obter a localização do utilizador
+- particularmente util para dispositivos móveis
+- Falar nos eventos, e como é que se apanham eventos (código)
+  + Quando o user muda de localização por exemplo
+- Exemplo: Como detectar suporte e determinar localização
+*** DONE Canvas
+**** Permite-nos desenvolver uma aplicação que possa desenhar gráficos
+- Deixamos de precisar de flash!
+- Podemos renderizar gráficos, jogos, etc, on the fly.
+- Um canvas é um rectangulo na aplicação onde podemos utilizar JavaScript para
+  desenharmos o que quisermos!
+- Exemplo Canvas
+*** DONE Manipulação de história (pun algures aqui)
 A API de manipulação de história do HTML deixa-nos modificar a history do
 browser utilizando JavaScript.
 
@@ -153,77 +223,9 @@ voltar ao URL tudo estará como antes.
 
 Exemplo github!
 Mudar folder e quando faço refresh ele fica no mesmo sítio
-** DONE CSS 3
-Não faz parte do standard html5, mas todos os browser modernos implementam
-algumas funcionalidades de CSS 3
-
-- Exemplos
-  + CSS Selectors
-  + No more ugly fonts (!!)
-  + Text Wrapping
-  + Columns
-  + Etc etc etc
-** DONE O que é o HTML 5
-Não é uma linguagem nova que vêm substituir HTML/XHTML/etc etc
-
-É um conjunto de tecnologias e capacidades que estão disponíveis em browsers
-modernos e que nos permitem desenvolver aplicações web com capacidadades
-semelhantes a aplicações nativas.
-
-HTML5 ~= HTML + CSS + JS
-
-** DONE Quando podemos começar a utilizar HTML 5?
-*** Hoje
-- Todos os browsers modernos implementam as funcionalidades mais conhecidas de
-  HTML 5, podemos começar a utilizar estas capacidades a partir de hoje, tendo
-  sempre cuidado para suportar gradefull degradation
-*** Como?
-- Dado que HTML 5 é um conjunto de tecnologias, cada browser pode suportar um
-conjunto diferente das tecnologias que estão definidas no standard HTML 5.
-- Precisamos de detectar features em cada browser que acede à nossa aplicação
-- Felizmente já alguém fez isso por nós e só precisamos de utilizar o modernizer
-- You can't detect "HTML 5 support", detectar features que são necessárias para
-  a nossa aplicação
-- if (Modernizr.localstorage) {
-  // window.localStorage is available!
-} else {
-  // no native support for local storage :(
-  // maybe try Gears or another third-party solution
-}
-
-**** <!DOCTYPE html> Muito mais fácil que XHTML/whatever
-** DONE Canvas
-*** Permite-nos desenvolver uma aplicação que possa desenhar gráficos
-- Deixamos de precisar de flash!
-- Podemos renderizar gráficos, jogos, etc, on the fly.
-- Um canvas é um rectangulo na aplicação onde podemos utilizar JavaScript para
-  desenharmos o que quisermos!
-- Exemplo Canvas
-** DONE Video
-HTML5 defines a standard way to embed video in a web page, using a <video>
-element. Support for the <video> element is still evolving, which is a polite
-way of saying it doesn’t work yet. At least, it doesn’t work everywhere. But
-don’t despair! There are alternatives and fallbacks and options galore.
-
-- Mais uma razão para deixarmos de utilizar flash
-- Exemplo de como introduzir um video numa página
-
-** DONE Localização
-Geolocation is the art of figuring out where you are in the world and
-(optionally) sharing that information with people you trust. There is more than
-one way to figure out where you are — your IP address, your wireless network
-connection, which cell tower your phone is talking to, or dedicated GPS hardware
-that calculates latitude and longitude from information sent by satellites in
-the sky.
-
-- Permite-nos obter a localização do utilizador
-- particularmente util para dispositivos móveis
-- Falar nos eventos, e como é que se apanham eventos (código)
-  + Quando o user muda de localização por exemplo
-- Exemplo: Como detectar suporte e determinar localização
-
-** DONE Guardar Dados Offline
-*** LocalStorage/IndexedDB/WebSQL
+** Funcionalidades Nativas
+*** DONE Guardar Dados Offline
+**** LocalStorage/IndexedDB/WebSQL
 - Uma das vantagens das aplicações nativas sobre as aplicações é a capacidade de
   guardar informação do lado do cliente:
   + Ficheiros de configuração, dados privados da aplicação, etc
@@ -240,7 +242,7 @@ the sky.
 - Exemplo código como é que se usa isto
 - Exemplo de aplicação que utilize isto 
 - Falar em indexedDB e WebSQL
-*** Caching do lado do cliente
+**** Caching do lado do cliente
 - Podemos fazer download da noss aaplicação toda para o lado do cliente e depois
   simplesmente utilizar APIs para interagir com o servidor.
   + Comportamento muito semlhante ao que estamos habituados ao utilizar
@@ -256,15 +258,13 @@ the sky.
 - Quando o ficheiro é modificado no servidor, a próxima vez que o browser obter
   o ficheiro, refresca a cache
 - Exemplo de ficheiro de caching
-** DONE Web Sockets
-Normalmente precisamos de long polling para manter uma conexão com o servidor
-
-Por exemplo, um utilizador pode ser avisado que houver alterações ao documento
-que ele está a editar ou recebemos notificações de novos eventos no spreadd
-
-Web sockets permite-nos manter uma conexão TCP normal com o servidor ou outros
-clientes!
-
-Só são enviados dados, não são enviados headers http
-
-- Exemplo MESMO DE WEBSOCKETS OMFG!
+*** DONE Orientação de dispositivo
+*** DONE Drag & Drop
+*** DONE Notificações
+**** Aplicações web podem mostrar notificações, tal como aplicações nativas
+*** DONE Markup for applications
+** DONE Resources
+*** http://www.html5rocks.com/en/tutorials/device/orientation/deviceorientationsample.html
+*** Tudo isto foi feito em HTML, com utilização de algumas destas funcionalidades
+*** Dive into html 5
+*** Html 5 Rocks
