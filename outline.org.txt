@@ -1,6 +1,4 @@
-
 http://www.html5rocks.com/en/tutorials/device/orientation/deviceorientationsample.html
-
 
 * Descrição
 O HTML 5 engloba um conjunto de funcionalidades e tecnologias que todos os
@@ -12,11 +10,13 @@ acedidas em qualquer computador, em qualquer lugar do mundo sem sair do browser!
 
 
 * TODO
+** Slide Sobre Acessibilidade
 ** SpellCheck
 ** Melhorar parte CSS 3
 ** Implementar accelerator sensor logo
-** treinar
+** Treinar
 ** Meter mais texto, n tenho slides para 90 minutos
+
 
 * Slides
 ** Intro
