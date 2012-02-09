@@ -9,7 +9,11 @@ melhor destes dois mundos: Aplicações web com capacidades de aplicações nati
 acedidas em qualquer computador, em qualquer lugar do mundo sem sair do browser!
 
 
+sass
+
+
 * TODO
+** Falar em phonegapp
 ** Slide Sobre Acessibilidade
 ** SpellCheck
 ** Melhorar parte CSS 3
