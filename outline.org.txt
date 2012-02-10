@@ -1,25 +1,7 @@
 http://www.html5rocks.com/en/tutorials/device/orientation/deviceorientationsample.html
 
-* Descrição
-O HTML 5 engloba um conjunto de funcionalidades e tecnologias que todos os
-browsers modernos implementam, o que torna possível a criação de aplicações web
-que suportem operações tão complexas como as suportadas em qualquer aplicação
-nativa, tudo sem sair do nosso browser, obtemos assim aplicações que unem o
-melhor destes dois mundos: Aplicações web com capacidades de aplicações nativas
-acedidas em qualquer computador, em qualquer lugar do mundo sem sair do browser!
-
-
-sass
-
-
 * TODO
-** Falar em phonegapp
-** Slide Sobre Acessibilidade
 ** SpellCheck
-** Melhorar parte CSS 3
-** Implementar accelerator sensor logo
-** Treinar
-** Meter mais texto, n tenho slides para 90 minutos
 
 
 * Slides
