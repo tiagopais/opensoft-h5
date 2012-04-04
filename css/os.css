@@ -17,3 +17,8 @@
   -webkit-transform: rotate(10deg) scale(1) skew(1deg) translate(7px);
   -moz-transform: rotate(10deg) scale(1) skew(1deg) translate(7px);
   -o-transform: rotate(10deg) scale(1) skew(1deg) translate(7px); }
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
