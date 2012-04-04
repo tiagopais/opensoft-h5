@@ -1,0 +1,256 @@
+http://www.html5rocks.com/en/tutorials/device/orientation/deviceorientationsample.html
+
+* TODO
+** SpellCheck
+
+
+* Slides
+** Intro
+*** DONE Quando podemos começar a utilizar HTML 5?
+**** Hoje
+- Todos os browsers modernos implementam as funcionalidades mais conhecidas de
+  HTML 5, podemos começar a utilizar estas capacidades a partir de hoje, tendo
+  sempre cuidado para suportar gradefull degradation
+**** Como?
+- Dado que HTML 5 é um conjunto de tecnologias, cada browser pode suportar um
+conjunto diferente das tecnologias que estão definidas no standard HTML 5.
+- Precisamos de detectar features em cada browser que acede à nossa aplicação
+- Felizmente já alguém fez isso por nós e só precisamos de utilizar o modernizer
+- You can't detect "HTML 5 support", detectar features que são necessárias para
+  a nossa aplicação
+- if (Modernizr.localstorage) {
+  // window.localStorage is available!
+} else {
+  // no native support for local storage :(
+  // maybe try Gears or another third-party solution
+}
+
+***** <!DOCTYPE html> Muito mais fácil que XHTML/whatever
+*** DONE O que é o HTML 5
+Não é uma linguagem nova que vêm substituir HTML/XHTML/etc etc
+
+É um conjunto de tecnologias e capacidades que estão disponíveis em browsers
+modernos e que nos permitem desenvolver aplicações web com capacidadades
+semelhantes a aplicações nativas.
+
+HTML5 ~= HTML + CSS + JS
+** Novos Elementos HTML
+*** DONE Estrutura Semântica
+- Antes do suporte para elemtos semânticos, as páginas web eram estruturadas com
+  elementos genéricos, olhando para a source é díficil inferir alguma estrutura
+  nas páginas. Isto tem alguns problemas:
+
+  - Nem todos os dispositivos web conseguem apresentar os conteúdos da melhor
+    forma se não souberem como optimizar a apresentação da página
+
+  - Se quisermos desenvolver um programa para extrair informação de páginas web
+    automaticamente, se a informação não estiver bem estruturada pode ser
+    impossível descobrir onde está o conteúdo. Idealmente se todos os sites
+    tiverem informação semântica, as máquinas podem navegar na web tal como os
+    humanos.
+
+  - Utilizando a estrutura de páginas, os browsers podem definir defaults mais
+    realistas e fazer um render default mininimamente interessante.
+
+**** Elementos Semânticos suportados
+ <section> The section element represents a generic document or application
+ section. A section, in this context, is a thematic grouping of content,
+ typically with a heading. Examples of sections would be chapters, the tabbed
+ pages in a tabbed dialog box, or the numbered sections of a thesis. A Web
+ site's home page could be split into sections for an introduction, news items,
+ contact information.
+
+<nav>
+The nav element represents a section of a page that links to other pages or to
+parts within the page: a section with navigation links. Not all groups of links
+on a page need to be in a nav element — only sections that consist of major
+navigation blocks are appropriate for the nav element. In particular, it is
+common for footers to have a short list of links to common pages of a site, such
+as the terms of service, the home page, and a copyright page. The footer element
+alone is sufficient for such cases, without a nav element.
+
+<article>
+The article element represents a component of a page that consists of a
+self-contained composition in a document, page, application, or site and that is
+intended to be independently distributable or reusable, e.g. in
+syndication. This could be a forum post, a magazine or newspaper article, a Web
+log entry, a user-submitted comment, an interactive widget or gadget, or any
+other independent item of content.
+
+<aside>
+The aside element represents a section of a page that consists of content that
+is tangentially related to the content around the aside element, and which could
+be considered separate from that content. Such sections are often represented as
+sidebars in printed typography. The element can be used for typographical
+effects like pull quotes or sidebars, for advertising, for groups of nav
+elements, and for other content that is considered separate from the main
+content of the page.
+
+<hgroup>
+The hgroup element represents the heading of a section. The element is used to
+group a set of h1–h6 elements when the heading has multiple levels, such as
+subheadings, alternative titles, or taglines.
+
+<header>
+The header element represents a group of introductory or navigational aids. A
+header element is intended to usually contain the section’s heading (an h1–h6
+element or an hgroup element), but this is not required. The header element can
+also be used to wrap a section’s table of contents, a search form, or any
+relevant logos.
+
+<footer>
+The footer element represents a footer for its nearest ancestor sectioning
+content or sectioning root element. A footer typically contains information
+about its section such as who wrote it, links to related documents, copyright
+data, and the like. Footers don’t necessarily have to appear at the end of a
+section, though they usually do. When the footer element contains entire
+sections, they represent appendices, indexes, long colophons, verbose license
+agreements, and other such content.
+
+<time> The time element represents either a time on a 24 hour clock, or a
+precise date in the proleptic Gregorian calendar, optionally with a time and a
+time-zone offset.
+
+<mark> The mark element represents a run of text in one document marked or
+highlighted for reference purposes.
+*** DONE Formulários
+- O HTML 5 define vários tipos de inputs que todos os dispositivos podem
+  utilizar de forma a proporcionar uma melhor experiência para o utilizador
+
+  + Por exemplo, se o input for para um e-mail, um telemóvel pode mudar o
+    teclado apresentado para mostrar o caracter @, se for para um número de
+    telefone, o telemóvel pode mudar um teclado só com números ou mostrar os
+    contactos guardados no telefone
+
+  + Sabendo o tipo dos campos, o browser podem fazer validações client-side
+    automáticamente, sem precisarmos de programar explicitamente
+
+- Quando o browser nao suporta, mostra os inputs normais, por isso podemos
+  começar já a utilizar isto!
+
+- Exemplos:
+  + Placeholder
+  + Focus
+  + Email
+  + Web Address
+  + Number spinbox
+  + Sliders
+  + Search
+  + Validações (Exemplo mesmo de um form!)
+    - Email/url
+    - Numbers (min, max, etc)
+
+Tudo isto degrada bem, podemos começar a utilizar isto!!
+*** DONE CSS 3
+Não faz parte do standard html5, mas todos os browser modernos implementam
+algumas funcionalidades de CSS 3
+
+- Exemplos
+  + CSS Selectors
+  + No more ugly fonts (!!)
+  + Text Wrapping
+  + Columns
+  + Etc etc etc
+*** DONE Video
+HTML5 defines a standard way to embed video in a web page, using a <video>
+element. Support for the <video> element is still evolving, which is a polite
+way of saying it doesn’t work yet. At least, it doesn’t work everywhere. But
+don’t despair! There are alternatives and fallbacks and options galore.
+
+- Mais uma razão para deixarmos de utilizar flash
+- Exemplo de como introduzir um video numa página
+** APIs JavaScript
+*** DONE Web Sockets
+Normalmente precisamos de long polling para manter uma conexão com o servidor
+
+Por exemplo, um utilizador pode ser avisado que houver alterações ao documento
+que ele está a editar ou recebemos notificações de novos eventos no spreadd
+
+Web sockets permite-nos manter uma conexão TCP normal com o servidor ou outros
+clientes!
+
+Só são enviados dados, não são enviados headers http
+
+- Exemplo MESMO DE WEBSOCKETS OMFG!
+*** DONE Localização
+Geolocation is the art of figuring out where you are in the world and
+(optionally) sharing that information with people you trust. There is more than
+one way to figure out where you are — your IP address, your wireless network
+connection, which cell tower your phone is talking to, or dedicated GPS hardware
+that calculates latitude and longitude from information sent by satellites in
+the sky.
+
+- Permite-nos obter a localização do utilizador
+- particularmente util para dispositivos móveis
+- Falar nos eventos, e como é que se apanham eventos (código)
+  + Quando o user muda de localização por exemplo
+- Exemplo: Como detectar suporte e determinar localização
+*** DONE Canvas
+**** Permite-nos desenvolver uma aplicação que possa desenhar gráficos
+- Deixamos de precisar de flash!
+- Podemos renderizar gráficos, jogos, etc, on the fly.
+- Um canvas é um rectangulo na aplicação onde podemos utilizar JavaScript para
+  desenharmos o que quisermos!
+- Exemplo Canvas
+*** DONE Manipulação de história (pun algures aqui)
+A API de manipulação de história do HTML deixa-nos modificar a history do
+browser utilizando JavaScript.
+
+Desta forma, podemos adicionar entradas à history, modificar o URL do browser
+sem que isso provoque um refresh da página. Quando o utilizador pressiona o
+butão "back", podemos apanhar esse evento e modificar a página impedindo que a
+página seja refrescada.
+
+Esta API permite-nos ter uma aplicação web que se porta como uma aplicação
+nativa, à medida que o utilizador utiliza a aplicação toda a interface pode
+mudar sem que todos os elementos da página sejam renderizados novamente, o url
+vai mudando e se o utilizador fizer refresh ou desligar o browser mais tarde
+voltar ao URL tudo estará como antes.
+
+Exemplo github!
+Mudar folder e quando faço refresh ele fica no mesmo sítio
+** Funcionalidades Nativas
+*** DONE Guardar Dados Offline
+**** LocalStorage/IndexedDB/WebSQL
+- Uma das vantagens das aplicações nativas sobre as aplicações é a capacidade de
+  guardar informação do lado do cliente:
+  + Ficheiros de configuração, dados privados da aplicação, etc
+- O HTML 5 define APIs de forma a que as aplicações web possam guardar
+  informação no computador do utilizador de forma segura, sem que as aplpicações
+  tenham acesso directo ao sistema de ficheiros
+- Antes só podiamos utilizar Cookies mas as cookies têm vários problemas
+  + São enviadas com todos os pedidos http, inseguro e pode atrasar tráfego
+  + Tem um tamanho máximo de 4KB
+- Com a local storage podemos
+  + Guardar dados do lado do cliente
+  + Que são persistentes para além de um refresh da página
+  + e que não são transmitidos para o servidor
+- Exemplo código como é que se usa isto
+- Exemplo de aplicação que utilize isto 
+- Falar em indexedDB e WebSQL
+**** Caching do lado do cliente
+- Podemos fazer download da noss aaplicação toda para o lado do cliente e depois
+  simplesmente utilizar APIs para interagir com o servidor.
+  + Comportamento muito semlhante ao que estamos habituados ao utilizar
+    aplicações nativas
+- Se a aplicação nao precisar mesmo de servidor (jogos, editores, etc etc), pode
+  funcionar normalmente offline, guardar dados em localStorage e depois fazer o
+  sync quando voltar off-line!
+- Existem eventos no DOM que nos dizem quando o utilizar mudam para
+  offline/online
+- Carregamento mais rápido de aplicações web
+- É tão simples como criar um ficheiro que lista todos os ficheiros que o
+  browser deve guardar
+- Quando o ficheiro é modificado no servidor, a próxima vez que o browser obter
+  o ficheiro, refresca a cache
+- Exemplo de ficheiro de caching
+*** DONE Orientação de dispositivo
+*** DONE Drag & Drop
+*** DONE Notificações
+**** Aplicações web podem mostrar notificações, tal como aplicações nativas
+*** DONE Markup for applications
+** DONE Resources
+*** http://www.html5rocks.com/en/tutorials/device/orientation/deviceorientationsample.html
+*** Tudo isto foi feito em HTML, com utilização de algumas destas funcionalidades
+*** Dive into html 5
+*** Html 5 Rocks
