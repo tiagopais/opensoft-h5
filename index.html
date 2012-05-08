@@ -41,8 +41,8 @@
 
       <br>
         
-        <h5>Bruno Teixeira | Fábio Neves | Tiago Pais | Mariana Sousa</h5>
-        <h5>ENEI'2012</h5>
+        <h5>Tiago Pais</h5>
+        <h5>Jortec'2012</h5>
       </span>
 </section>
 
@@ -113,11 +113,10 @@
 
 <section class="slide" id="como-3">
     <h2>Como?</h2>
-    <h3>HTML 5 é um conjunto de tecnologias, não podemos detectar suporte para
-        HTML 5</h3>
+    <h3>HTML 5 é um conjunto de tecnologias!</h3>
+    <h3>Não podemos detectar suporte para HTML 5</h3>
 
-    <h3>Temos de detectar se o browser suporta cada uma das features que nós
-        queremos usar</h3>
+    <h3>Temos de detectar se o browser suporta cada uma das features que nós queremos usar</h3>
 </section>
 
 <section class="slide" id="como-4">
@@ -130,13 +129,14 @@
         correctamente a página, podemos avisar o utilizador ou utilizar outra
         tecnologia que esteja disponível</p>
 
-  <pre><code>
-      if (Modernizr.localstorage) {
-      // Utilizar o localStorage!
-      } else {
-      // Browser não suporta localStorage
-      // Utilizar outra forma
-      }</code></pre>
+    <pre><code>
+if (Modernizr.localstorage) {
+    // Utilizar o localStorage!
+} else {
+    // Browser não suporta localStorage
+    // Utilizar outra forma
+}
+  </code></pre>
 </section>
 
 <section class="slide" id="como-5">
@@ -145,9 +145,7 @@
     <h2>Lembram-se dos doctypes??</h2>
 
   <pre><code>
-      &lt;!DOCTYPE html
-      PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
   </code>
   </pre>
 </section>
@@ -165,13 +163,13 @@
     <h3>Antes</h3>
 
   <pre><code>
-      &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;
   </code></pre>
 
     <h3>Agora</h3>
   
     <pre><code>
-        &lt;meta charset="utf-8" /&gt;
+&lt;meta charset="utf-8" /&gt;
     </code></pre>
 </section>
 
@@ -189,7 +187,6 @@
 
 <section class="slide separator1" id="whats-new">
   <span class="vcenter">
-    <img style="width: 300px;" src="img/owl.png">
     <h1>Novos Elementos HTML</h1>
   </span>
 </section>
@@ -250,11 +247,12 @@
 
     <p>Também podemos utilizar vários formatos, o browser selecciona o formato que suporta:</p>
 
-<pre><code>&lt;video width="320" height="240" controls&gt;
+<pre><code>
+&lt;video width="320" height="240" controls&gt;
     &lt;source src="pr6.mp4"  type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'&gt;
     &lt;source src="pr6.webm" type='video/webm; codecs="vp8, vorbis"'&gt;
     &lt;source src="pr6.ogv"  type='video/ogg; codecs="theora, vorbis"'&gt;
-    &lt;/video&gt;</pre></code>
+&lt;/video&gt;</pre></code>
 </section>
 
 <section class="slide" id="video-2">
@@ -266,17 +264,17 @@
         <code>pause()</code> e uma propriedade <code>currentTime</code> que podem
         ser utilizados para controlar o playback do vídeo.
 
-    <pre><code>&lt;script type="text/javascript"&gt;
-        var v = document.getElementById("movie");
-        v.onclick = function() {
+    <pre><code>
+&lt;script type="text/javascript"&gt;
+    var v = document.getElementById("movie");
+    v.onclick = function() {
         if (v.paused) {
-        v.play();
+            v.play();
         } else {
-        v.pause();
+            v.pause();
         }
-        };
-        &lt;/script&gt;</pre></code>
-
+    };
+&lt;/script&gt;</pre></code>
 </section>
 
 <section class="slide" id="video-3">
@@ -380,20 +378,19 @@
 <section class="slide" id="css-2">
     <h2>Selectors</h2>
     <pre><code>.row:nth-child(even) {
-        background: #dde;
-        }
-        .row:nth-child(odd) {
-        background: white;
-        }</code></pre>
-  <pre><code>input[type='text'] {
-      background: #eee;
-      }</code></pre>
-
+    background: #dde;
+}
+.row:nth-child(odd) {
+    background: white;
+}</code></pre>
+    <pre><code>input[type='text'] {
+    background: #eee;
+}</code></pre>
   <pre><code>h2:first-child { ... }
 
-      div.text > div { ... }
+div.text > div { ... }
 
-      h2 + header { ... }</code></pre>
+h2 + header { ... }</code></pre>
 </section>
 
 
@@ -412,19 +409,16 @@
 
     <h4><a href="https://typekit.com/">https://typekit.com/</a></h4>
 
-  <pre><code>
-      @import url(http://fonts.googleapis.com/css?family=Alfa+Slab+One);
+  <pre><code>@import url(http://fonts.googleapis.com/css?family=Alfa+Slab+One);
 
-      h2 {
-      font-family: 'Alfa Slab One', cursive;
-      }
+h2 {
+    font-family: 'Alfa Slab One', cursive;
+}
 
-      @font-face {
-      font-family: 'Droid Sans';
-      src: url(Droid_Sans.ttf);
-      }
-
-  </code></pre>
+@font-face {
+    font-family: 'Droid Sans';
+    src: url(Droid_Sans.ttf);
+}</code></pre>
 </section>
 
 <section class="slide" id="css-shadows">
@@ -436,12 +430,12 @@
 <section class="slide" id="css-shadows-code">
     <h2>Exemplo</h2>
     <pre><code>
-        .rainbow {
-        text-shadow: -1px -1px hsl(0,100%,50%)
-        ...
-        ...
-        }
-    </code></pre>
+.rainbow {
+    text-shadow: -1px -1px hsl(0,100%,50%)
+    ...
+    ...
+}
+</code></pre>
 </section>
 
 
@@ -453,12 +447,12 @@
     <br><br><br><br>
 
     <div class="css-transformed">
-  <pre><code>
-      -webkit-transform: rotateY(45deg);
-      -webkit-transform: scaleX(25deg);
-      -webkit-transform: translate3d(0, 0, 90deg);
-      -webkit-transform: perspective(500px)
-  </code></pre>
+        <pre><code>
+-webkit-transform: rotateY(45deg);
+-webkit-transform: scaleX(25deg);
+-webkit-transform: translate3d(0, 0, 90deg);
+-webkit-transform: perspective(500px)
+        </code></pre>
     </div>
 
 </section>
@@ -519,13 +513,14 @@
 
 <pre><code>&lt;script type="text/javascript"&gt;
     var canvasContext = document.getElementById("canvas").getContext("2d");
+
     canvasContext.fillRect(250, 25, 150, 100);
     canvasContext.beginPath();
     canvasContext.arc(450, 110, 100, Math.PI * 1/2, Math.PI * 3/2);
     canvasContext.lineCap = 'round';
     canvasContext.strokeStyle = 'rgba(255, 127, 0, 0.5)';
     canvasContext.stroke();
-    &lt;/script&gt;
+&lt;/script&gt;
 </code></pre>
 
     <input type="button" value="Desenhar!" id="draw-btn">
@@ -560,16 +555,17 @@
     <h2>Código</h2>
 
     <pre><code>
-        navigator.geolocation.getCurrentPosition(showPosition, handlePositionError);
+navigator.geolocation.getCurrentPosition(showPosition, handlePositionError);
 
-        function showPosition(position) = {
-        geolog.textContent = "Está a menos de " + position.coords.accuracy +
-        " metros de: (" + position.coords.latitude + ", " +
-        position.coords.longitude + ")";
-        }
+function showPosition(position) = {
+    geolog.textContent = "Está a menos de "
+        + position.coords.accuracy
+        + " metros de: ("
+        + position.coords.latitude + ", "
+        + position.coords.longitude + ")";
+}
     </code></pre>
 </section>
-
 
 <section class="slide" id="location-2">
     <h2>Exemplo Localização</h2>
@@ -609,19 +605,19 @@
 
 <section class="slide" id="websockets-2">
     <h2>WebSockets - Exemplo</h2>
-  <pre><code>        var socket = new WebSocket('ws://echo.websocket.org?encoding=text');
-      socket.onopen = function(event) {
-      socket.send('Hello, Opensoft!');
-      };
+  <pre><code>var socket = new WebSocket('ws://echo.websocket.org?encoding=text');
 
-      socket.onmessage = function(event) {
-      logBox.value += 'Received echo: ' + event.data + '\n';
-      }
+socket.onopen = function(event) {
+    socket.send('Hello, Opensoft!');
+};
 
-      socket.onclose = function(event) {
-      logBox.value += 'Closed Connection\n';
-      }
-      }</code></pre>
+socket.onmessage = function(event) {
+    logBox.value += 'Received echo: ' + event.data + '\n';
+}
+
+socket.onclose = function(event) {
+    logBox.value += 'Closed Connection\n';
+}</code></pre>
 
     <textarea id="ws-logbox" cols="40" rows="5">
     </textarea>
@@ -659,12 +655,12 @@
     <h2>Exemplo LocalStorage</h2>
 
   <pre><code>function saveGameState() {
-      localStorage["game.in.progress"] = gGameInProgress;
-      localStorage["game.selectedpiece"] = gSelectedPieceIndex;
-      localStorage["game.selectedpiecehasmoved"] = true;
-      localStorage["game.movecount"] = gMoveCount;
-      return true;
-      }</code></pre>
+    localStorage["game.in.progress"] = gGameInProgress;
+    localStorage["game.selectedpiece"] = gSelectedPieceIndex;
+    localStorage["game.selectedpiecehasmoved"] = true;
+    localStorage["game.movecount"] = gMoveCount;
+    return true;
+}</code></pre>
 </section>
 
 <section class="slide" id="caching-1">
@@ -687,7 +683,7 @@
         em cache são actualizados</p>
 </section>
 
-<section class="slide" id="caching-1">
+<section class="slide" id="caching-2">
     <h2>Aplicações Offline</h2>
 
     <h3>cache + localStorage = aplicações offline</h3>
@@ -757,8 +753,8 @@
 
 
 <pre><code>document.addEventListener('dragstart', function(event) {
-    event.dataTransfer.setData('text', 'Customized text');
-    event.dataTransfer.effectAllowed = 'copy';
+        event.dataTransfer.setData('text', 'Customized text');
+        event.dataTransfer.effectAllowed = 'copy';
     }, false); </code></pre>
 
     <div id="drag-zone">
@@ -776,10 +772,10 @@
     <p>Muito útil para jogos e aplicações interactivas em dispositivos móveis</p>
 
   <pre><code>window.addEventListener('deviceorientation', function(event) {
-      var a = event.alpha;
-      var b = event.beta;
-      var g = event.gamma;
-      }, false);</code></pre>
+        var a = event.alpha;
+        var b = event.beta;
+        var g = event.gamma;
+    }, false);</code></pre>
 
     <img style='height: 200px;' src="img/html5_badge.png" id="rotated_badge" />
 </section>
@@ -789,9 +785,10 @@
     <h2>Markup para aplicações</h2>
     <h3>Componentes disponíveis normalmente em aplicações nativas</h3>
 
-  <pre><code>&lt;details&gt;&lt;summary&gt;HTML 5&lt;/summary&gt;
-      Mais informação sobre um outro item
-      &lt;/details&gt;</code></pre>
+  <pre><code>&lt;details&gt;
+    &lt;summary&gt;HTML 5&lt;/summary&gt;
+    Mais informação sobre um outro item
+&lt;/details&gt;</code></pre>
     <details>
         <summary>HTML 5</summary>
         Mais informação sobre um outro item
@@ -814,10 +811,11 @@
 <section class="slide" id="notify-1">
     <h2>Desktop Notifications</h2>
 
-  <pre><code>
-      window.webkitNotifications.createNotification(
-      "img/logo_os_small.png",
-      "Olá!", "Olá Opensoft").show();</code></pre>
+  <pre><code>window.webkitNotifications.createNotification(
+        "img/logo_os_small.png",
+        "Olá!",
+        "Olá Opensoft"
+).show();</code></pre>
 
     <input type="button" value="Mostrar Notificação" id="show-notif-btn">
 </section>
